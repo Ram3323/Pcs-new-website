@@ -315,7 +315,7 @@ const About = () => {
           <div className="hidden md:block bg-gray-200 shadow-xl w-[320px] h-[250px] md:w-[250px] md:h-[350px] lg:w-[280px] lg:h-[400px] xl:w-[450px] xl:h-[470px]">
             <img
               src={aboutimage}
-              alt="About Us"
+              alt="About Us loading"
               className="shadow-lg w-[220px] h-[150px] md:w-[230px] md:h-[180px] md:right-20 xl:right-24 lg:w-[350px] lg:h-[230px] xl:w-[450px] xl:h-[300px] relative z-10 top-20"
             />
           </div>
@@ -323,7 +323,7 @@ const About = () => {
           {/* Image (Always Visible and Centered on Mobile) */}
           <img
             src={aboutimage}
-            alt="About Us "
+            alt="About Us loading"
             className="md:hidden shadow-lg w-[280px] h-[180px]"  /* Visible and centered on mobile */
           />
 
