@@ -323,7 +323,7 @@ const About = () => {
           {/* Image (Always Visible and Centered on Mobile) */}
           <img
             src={aboutimage}
-            alt="About Us Loading"
+            alt="About Us "
             className="md:hidden shadow-lg w-[280px] h-[180px]"  /* Visible and centered on mobile */
           />
 
