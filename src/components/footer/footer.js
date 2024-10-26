@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="items-center mb-4  mt-8 md:mb-0 w-full md:w-1/4">
             <div className="w-20 h-20   flex items-center justify-center mr-3">
               {/* <span className="text-blue-900 font-bold text-xl">PCS</span> */}
-              <img src={FotterImage} alt='footerlogo'></img>
+              <img src={FotterImage} alt='footerlogo image'></img>
             </div>
             <span className="text-[40px] font-bold">PCS</span>
           </div>
