@@ -1,0 +1,286 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Flip animation */
+@keyframes flipAnimation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotateY(180deg);
+    opacity: 1;
+  }
+}
+
+.flip {
+  animation: flipAnimation 0.5s ease-in-out;
+}
+
+
+
+/* Animation for rotating the dashed border */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-dash {
+  animation: rotate 2s linear infinite;
+}
+
+
+
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #0a0a5e; /* Blue background */
+  position: relative;
+}
+
+.logo {
+  width: 130px; /* Adjust the size of your logo */
+  position: relative;
+  border-radius: 100px;
+  top: -30px; /* Start off-screen (top) */
+  animation: moveInFromTop 1.5s forwards; /* Move to center */
+}
+
+.splash-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  top: -50px; /* Start off-screen (top) */
+  animation: moveInFromTop 1.5s forwards; /* Move to center */
+  margin-top: 20px; /* Adjust the space between the logo and the text */
+}
+
+
+
+/* Dot Loader Styles */
+.dot-loader {
+  display: flex;
+  gap: 15px; /* Spacing between dots */
+  margin-top: 20px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  animation: bounce 0.4s infinite alternate;
+}
+
+.dot1 {
+  background-color: red;
+  animation-delay: 0s;
+}
+
+.dot2 {
+  background-color: green;
+  animation-delay: 0.2s;
+}
+
+.dot3 {
+  background-color: blue;
+  animation-delay: 0.4s;
+}
+
+.dot4 {
+  background-color: yellow;
+  animation-delay: 0.6s;
+}
+/* Animation for both logo and text from top to center */
+@keyframes moveInFromTop {
+  0% {
+    transform: translateY(-200%); /* Start off-screen (above) */
+  }
+  100% {
+    transform: translateY(0); /* Move to center */
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px); /* Bounce height */
+  }
+}
+
+
+/* Add this CSS to your styles */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in-enter-active {
+  opacity: 1;
+}
+
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.banner-image {
+  animation: slideInFromTop 0.6s ease-out forwards;
+}
+
+
+
+@keyframes slide-up {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out;
+}
+
+
+
+/* Animation for rotating the dashed border */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-dash {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 1.5s ease-in-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 1.5s ease-in-out forwards;
+}
+
+/* src/index.css */
+
+
+.service-card {
+  position: relative; /* Ensure the card is positioned relatively for absolute children */
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: -20px; /* Adjust this value based on your card's height */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent; /* Adjust these values for the size of the triangle */
+  border-right: 30px solid transparent;
+  border-top: 20px solid white; /* Adjust this for the color of the triangle */
+}
+.inner-shadow {
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.flip-animation {
+  animation: flip 0.8s ease-in-out;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
