@@ -259,12 +259,12 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div id="portfolio-section" className={`transition-opacity duration-500 ${isVisible ? 'opacity-100 animate-slide-up' : 'opacity-0'}`}>
+    <div id="portfolio-section" className={`transition-opacity duration-500 mb-32 ${isVisible ? 'opacity-100 animate-slide-up' : 'opacity-0'}`}>
       <h2 className="text-3xl font-bold text-center mb-4 text-black">Our Portfolio</h2>
       <div className='border-b-2 border-grey-500 w-24 mx-auto mb-16'></div>
 
       <div
-        className="relative w-full max-w-6xl mx-auto h-[380px] text-center bg-cover bg-center py-2 px-4"
+        className="relative w-full max-w-6xl mx-auto h-[380px] lg:max-w-4xl 2xl:max-w-6xl text-center bg-cover bg-center py-2 px-4"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         {/* Previous Button (conditionally rendered) */}
@@ -316,7 +316,7 @@ const Portfolio = () => {
         )}
 
         {/* Dots Indicator */}
-        <div className="flex justify-center space-x-2 ">
+        <div className="flex justify-center space-x-2">
           {projects.map((_, index) => (
             <div
               key={index}
