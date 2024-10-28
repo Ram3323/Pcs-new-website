@@ -71,13 +71,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/header/header';
-import About from './components/about/about';
-import Portfolio from './components/portfolio/portfolio';
+import Header from '../src/components/hompage/header/header';
+import About from '../src/components/hompage/about/about';
+import Portfolio from '../src/components/hompage/portfolio/portfolio';
 import logo from "../src/images/logohead-removebg-preview (1).png";
-import Services from './components/services/services';
-import Contact from './components/contactform/contact';
-import Footer from './components/footer/footer';
+import Services from '../src/components/hompage/services/services';
+import Contact from '../src/components/hompage/contactform/contact';
+import Footer from '../src/components/hompage/footer/footer';
 
 const App = () => {
   const [isSplashVisible, setIsSplashVisible] = useState(true);
