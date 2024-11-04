@@ -5,8 +5,8 @@ import AboutFeatures from '../aboutfeatures/aboutfeatures';
 const Aboutbanner = () => {
   return (
     <>
-    <div className="bg-gradient-to-b from-blue-400 to-blue-900 text-white py- px-8">
-      <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0 md:space-x-10">
+    <div className="bg-gradient-to-b from-[#2B95C5] to-[#15485F]  text-white py- px-8">
+      <div className="container mx-auto px-8 mt-8 flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0 md:space-x-10">
         
         {/* Text Section */}
         <div className="w-full md:w-1/2 space-y-8">

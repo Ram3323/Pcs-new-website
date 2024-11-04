@@ -76,7 +76,12 @@ import logo from "../src/images/logohead-removebg-preview (1).png";
 import Footer from './components/hompage/footer/footer';
 import Main from './components/main/main';
 import Aboutbanner from './components/about us/aboutbanner/aboutbanner';
-
+import WebApp from './components/servicedetails/webapp';
+import WebDesign from './components/servicedetails/webdesign';
+import MobileApp from './components/servicedetails/mobileapp';
+import Ecommerce from './components/servicedetails/ecommerce';
+import SEO from './components/servicedetails/seo';
+import WordPress from './components/servicedetails/wordpress';
 const App = () => {
   const [isSplashVisible, setIsSplashVisible] = useState(true);
 
@@ -110,6 +115,12 @@ const App = () => {
           <Routes>
             <Route exact path='/' element={<Main/>} />
             <Route exact path='/aboutbanner' element={<Aboutbanner/>} />
+            <Route exact path='/webapp' element={<WebApp/>} />
+            <Route exact path='/webdesign' element={<WebDesign/>} />
+            <Route exact path='/mobileapp' element={<MobileApp/>} />
+            <Route exact path='/seo' element={<SEO/>} />
+            <Route exact path='/ecommerce' element={<Ecommerce/>} />
+            <Route exact path='/wordpress' element={<WordPress/>} />
 
           </Routes>
           <Footer/>
