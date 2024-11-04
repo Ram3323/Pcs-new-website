@@ -71,13 +71,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from '../src/components/hompage/header/header';
-import About from '../src/components/hompage/about/about';
-import Portfolio from '../src/components/hompage/portfolio/portfolio';
+import Header from './components/hompage/header/header';
 import logo from "../src/images/logohead-removebg-preview (1).png";
-import Services from '../src/components/hompage/services/services';
-import Contact from '../src/components/hompage/contactform/contact';
-import Footer from '../src/components/hompage/footer/footer';
+import Footer from './components/hompage/footer/footer';
+import Main from './components/main/main';
+import Aboutbanner from './components/about us/aboutbanner/aboutbanner';
 
 const App = () => {
   const [isSplashVisible, setIsSplashVisible] = useState(true);
@@ -108,16 +106,13 @@ const App = () => {
         </div>
       ) : (
         <Router>
+          <Header/>
           <Routes>
-            <Route exact path='/' element={<Header/>} />
-            <Route exact path='/about' element={<About/>} />
-            <Route exact path='/portfolio' element={<Portfolio/>} />
-            <Route exact path='' element={<Services/>} />
-            <Route exact path='' element={<Contact/>} />
-            <Route exact path='' element={<Footer/>} />
-
+            <Route exact path='/' element={<Main/>} />
+            <Route exact path='/aboutbanner' element={<Aboutbanner/>} />
 
           </Routes>
+          <Footer/>
         </Router>
       )}
     </>

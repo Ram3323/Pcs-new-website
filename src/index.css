@@ -284,3 +284,23 @@ code {
     transform: rotateY(0);
   }
 }
+
+
+
+/* Keyframes for continuous scrolling */
+@keyframes marquee {
+  0% {
+    transform: translateX(0); /* Start at the beginning */
+  }
+  100% {
+    transform: translateX(-100%); /* Move the entire width to loop */
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: calc(150px * 300); /* Width to handle 6 icons repeated 50 times = 300 icons */
+  animation: marquee 360s linear infinite; /* Adjust speed for smoother scroll over a longer duration */
+}
+
+

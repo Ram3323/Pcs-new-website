@@ -165,6 +165,7 @@ const Banner = () => {
   }, [inView]);
 
   return (
+    <>
     <div ref={ref} className="w-full">
       {/* Header Section with Image and Bottom-Right Cut */}
       <div className="relative flex items-center justify-center h-[350px] xl:h-[650px] md:h-[500px] sm:h-[350px]">
@@ -200,6 +201,8 @@ const Banner = () => {
         </div>
       </div>
     </div>
+    
+    </>
   );
 };
 

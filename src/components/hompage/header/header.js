@@ -171,16 +171,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import Banner from '../banner/banner';
 import logo from '../header/images/logo-removebg-preview.png';
 import mobileLogo from '../header/images/logohead.png';
 import { IoArrowForwardCircleOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import About from '../about/about';
-import Portfolio from '../portfolio/portfolio';
-import Services from '../services/services';
-import Contact from '../contactform/contact';
-import Footer from '../footer/footer';
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -257,8 +252,8 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-16">
-          <Link to="#home" className="text-black font-semibold hover:text-blue-800">Home</Link>
-          <Link to="#about" className="text-black font-semibold hover:text-blue-800">About</Link>
+          <Link to="/" className="text-black font-semibold hover:text-blue-800">Home</Link>
+          <Link to="/aboutbanner" className="text-black font-semibold hover:text-blue-800">About</Link>
           <Link to="#services" className="text-black font-semibold hover:text-blue-800">Services</Link>
           <Link to="#portfolio" className="text-black font-semibold hover:text-blue-800">Portfolio</Link>
           <Link to="#blog" className="text-black font-semibold hover:text-blue-800">Blog</Link>
@@ -279,12 +274,7 @@ const Header = () => {
 
       {/* Main content */}
       <div className="pt-16">
-        <Banner />
-        <About />
-        <Services/>
-        <Portfolio />
-        <Contact/>
-        <Footer/>
+      
         
       </div>
     </>
