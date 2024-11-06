@@ -82,6 +82,10 @@ import MobileApp from './components/servicedetails/mobileapp';
 import Ecommerce from './components/servicedetails/ecommerce';
 import SEO from './components/servicedetails/seo';
 import WordPress from './components/servicedetails/wordpress';
+import Blogbanner from './components/blog/blogbanner/blogbanner';
+import ScrollToTop from './components/constant/scrolltotop';
+import PortfolioBanner from './components/portfoliopage/portfoliobanner';
+import Contact from './components/hompage/contactform/contact';
 const App = () => {
   const [isSplashVisible, setIsSplashVisible] = useState(true);
 
@@ -112,6 +116,7 @@ const App = () => {
       ) : (
         <Router>
           <Header/>
+          <ScrollToTop/>
           <Routes>
             <Route exact path='/' element={<Main/>} />
             <Route exact path='/aboutbanner' element={<Aboutbanner/>} />
@@ -121,6 +126,10 @@ const App = () => {
             <Route exact path='/seo' element={<SEO/>} />
             <Route exact path='/ecommerce' element={<Ecommerce/>} />
             <Route exact path='/wordpress' element={<WordPress/>} />
+            <Route exact path='/blogbanner' element={<Blogbanner/>} />
+            <Route exact path='/contact' element={<Contact/>} />
+            <Route exact path='/portfoliobanner' element={<PortfolioBanner/>} />
+
 
           </Routes>
           <Footer/>

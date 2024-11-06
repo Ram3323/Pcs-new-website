@@ -7,6 +7,7 @@ import { IoArrowForwardCircleOutline } from 'react-icons/io5';
 import ServiceLinks from '../header/servicelinks'; // Import ServiceLinks component
 
 const Header = () => {
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -27,6 +28,8 @@ const Header = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <>
@@ -78,25 +81,30 @@ const Header = () => {
           <Link to="/aboutbanner" className="text-black font-semibold hover:text-blue-800">About</Link>
           
           {/* Services link with hover effect to display ServiceLinks */}
-          <div className="relative group flex justify-center">
-  <Link to="#" className="text-black font-semibold hover:text-blue-800">
-    Services
-  </Link>
-  
-  {/* ServiceLinks component that appears on hover */}
-  <div className="absolute w-[1000px] mt-[20px] left-1/2 transform -translate-x-1/2 mt-2 hidden group-hover:flex flex-col bg-white shadow-lg p-4 rounded-lg transition-all duration-300">
-    <ServiceLinks />
-  </div>
-</div>
+          <div
+            className="relative group flex justify-center"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+          >
+            <Link to="#" className="text-black font-semibold hover:text-blue-800">
+              Services
+            </Link>
+            
+            {/* ServiceLinks component that appears on hover */}
+            {isServicesOpen && (
+              <div className="absolute w-[1000px] mt-[20px] left-1/2 transform -translate-x-1/2 mt-2 flex flex-col bg-white shadow-lg p-4 rounded-lg transition-all duration-300">
+                <ServiceLinks closeMenu={() => setIsServicesOpen(false)} />
+              </div>
+            )}
+          </div>
 
-
-          <Link to="/portfolio" className="text-black font-semibold hover:text-blue-800">Portfolio</Link>
-          <Link to="/blog" className="text-black font-semibold hover:text-blue-800">Blog</Link>
+          <Link to="/portfoliobanner" className="text-black font-semibold hover:text-blue-800">Portfolio</Link>
+          <Link to="/blogbanner" className="text-black font-semibold hover:text-blue-800">Blog</Link>
         </div>
 
         <div className="hidden lg:block">
           <button className="bg-blue-950 text-white font-semibold py-2 px-4 text-[16px] rounded-full h-8 w-28 font-marko shadow-2xl flex items-center">
-            Contact
+            <Link to="/contact" >Contact</Link>
             <div className="ml-2 bg-blue-950 h-9 w-9 p-2 rounded-full flex items-center justify-center">
               <span className='text-3xl transition-transform duration-300 '>
                 <IoArrowForwardCircleOutline />
@@ -114,33 +122,69 @@ const Header = () => {
         style={{ maxHeight: '100vh', overflowY: 'auto' }}
       >
         <div className="flex justify-between items-center w-full">
-          <img
-            src={mobileLogo}
-            alt="Logo"
-            className="h-12 w-auto"
-          />
-          <button
-            onClick={() => setIsMenuOpen(false)} 
-            className="text-black text-6xl px-2"
-          >
+          <img src={mobileLogo} alt="Logo" className="h-12 w-auto" />
+          <button onClick={() => setIsMenuOpen(false)} className="text-black text-6xl px-2">
             &times;
           </button>
         </div>
+
         <div className="flex flex-col w-full">
-          <Link to="/" className="text-black text-xl font-bold py-4 hover:text-blue-800 border-b border-gray-300">Home</Link>
-          <Link to="/aboutbanner" className="text-black text-xl font-bold py-4 hover:text-blue-800 border-b border-gray-300">About Us</Link>
-          <Link to="/services" className="text-black text-xl font-bold py-4 hover:text-blue-800 border-b border-gray-300">Services</Link>
-          <Link to="/portfolio" className="text-black text-xl font-bold py-4 hover:text-blue-800 border-b border-gray-300">Portfolio</Link>
-          <Link to="/blog" className="text-black text-xl font-bold py-4 mb-8 hover:text-blue-800 border-b border-gray-300">Blogs</Link>
+          <Link to="/" className="text-black text-xl font-bold py-4 hover:text-blue-800 border-b border-gray-300">
+            Home
+          </Link>
+          <Link to="/aboutbanner" className="text-black text-xl font-bold py-4 hover:text-blue-800 border-b border-gray-300">
+            About Us
+          </Link>
+          
+          {/* Services Menu with Dropdown */}
+          <div className="relative w-full">
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="text-black text-xl font-bold py-4 w-full text-left hover:text-blue-800 border-b border-gray-300 flex items-center justify-between"
+            >
+              Services
+              <span className={`transform ${isServicesOpen ? 'rotate-180' : ''}`}>▼</span>
+            </button>
+            
+            {/* Dropdown Links */}
+            {isServicesOpen && (
+              <div className="flex flex-col pl-4 space-y-2 bg-gray-100">
+                <Link to="/seo" onClick={() => setIsMenuOpen(false)} className="text-black text-lg py-2 hover:text-blue-800">
+                  SEO
+                </Link>
+                <Link to="/wordpress" onClick={() => setIsMenuOpen(false)} className="text-black text-lg py-2 hover:text-blue-800">
+                  WordPress
+                </Link>
+                <Link to="/webapp" onClick={() => setIsMenuOpen(false)} className="text-black text-lg py-2 hover:text-blue-800">
+                  Web App Development
+                </Link>
+                <Link to="/webdesign" onClick={() => setIsMenuOpen(false)} className="text-black text-lg py-2 hover:text-blue-800">
+                  Web Design
+                </Link>
+                <Link to="/ecommerce" onClick={() => setIsMenuOpen(false)} className="text-black text-lg py-2 hover:text-blue-800">
+                  E-commerce
+                </Link>
+                <Link to="/mobileapp" onClick={() => setIsMenuOpen(false)} className="text-black text-lg py-2 hover:text-blue-800">
+                  Mobile App Development
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link to="/portfoliobanner" className="text-black text-xl font-bold py-4 hover:text-blue-800 border-b border-gray-300">
+            Portfolio
+          </Link>
+          <Link to="/blogbanner" className="text-black text-xl font-bold py-4 mb-8 hover:text-blue-800 border-b border-gray-300">
+            Blogs
+          </Link>
           <Link
-            to="#contact"
+            to="/contact"
             className="bg-blue-950 text-white text-xl font-bold text-center px-4 py-2 rounded-3xl hover:bg-blue-100 hover:text-black transition-all duration-300"
           >
             Contact Us
           </Link>
         </div>
       </div>
-
     </>
   );
 };

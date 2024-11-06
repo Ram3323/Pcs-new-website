@@ -54,7 +54,7 @@ const MobileApp = () => {
           </h2>
         </div>
 
-        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed max-w-6xl">
+        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed text-justify max-w-6xl">
           <p>
           Creating a mobile app is more than just coding; it's about crafting a seamless user experience that resonates with your audience. Our team specializes in understanding your unique vision and transforming it into a powerful mobile application that not only meets your business needs but also delights your users. From concept to launch, we prioritize user-centric design, ensuring that every interaction is intuitive and engaging.
 

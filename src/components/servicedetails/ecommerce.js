@@ -54,7 +54,7 @@ const Ecommerce = () => {
           </h2>
         </div>
 
-        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed max-w-6xl">
+        <div className="text-gray-700 text-left font-markazi text-sm text-justify md:text-[18px] leading-relaxed max-w-6xl">
           <p>
           In the fast-paced world of eCommerce, providing a seamless shopping experience is essential for attracting and retaining customers. Our platform is designed to offer a user-friendly interface that makes browsing and purchasing products effortless. With a diverse range of high-quality items, we cater to every taste and need, ensuring that our customers can find exactly what they are looking for.
 

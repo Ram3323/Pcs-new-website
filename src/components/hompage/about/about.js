@@ -199,7 +199,7 @@ import React, { useEffect, useState } from "react";
 import aboutimage from "../about/images/company.jpg";
 import { IoArrowForwardCircleOutline } from 'react-icons/io5';
 import { motion } from 'framer-motion';
-
+import { Link } from "react-router-dom";
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -262,7 +262,7 @@ const About = () => {
         <div className="w-full md:w-1/2 md:pr-4">
           <div className="border-t-[6px] md:border-t-[10px] border-blue-950 w-[120px] md:w-[190px] mb-4 md:mb-8"></div>
           <motion.h2
-            className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6"
+            className="text-2xl md:text-3xl font-marko font-bold text-gray-800 mb-4 md:mb-6"
             variants={textVariants}
             initial="initial"
             animate={isVisible ? "animate" : "initial"}
@@ -271,7 +271,7 @@ const About = () => {
             WHO WE ARE!..
           </motion.h2>
           <motion.p
-            className="text-md md:text-lg text-gray-700 mb-4 md:mb-6"
+            className="text-md md:text-lg text-gray-700 font-markazi mb-4 md:mb-6"
             variants={textVariants}
             initial="initial"
             animate={isVisible ? "animate" : "initial"}
@@ -280,7 +280,7 @@ const About = () => {
             We build greater futures through innovation and collective knowledge.
           </motion.p>
           <motion.p
-            className="text-gray-600 text-sm md:text-base leading-relaxed md:leading-loose text-justify mb-4 md:mb-6"
+            className="text-gray-600 text-sm md:text-base font-markazi leading-relaxed md:leading-loose text-justify mb-4 md:mb-6"
             variants={textVariants}
             initial="initial"
             animate={isVisible ? "animate" : "initial"}
@@ -293,15 +293,15 @@ const About = () => {
             the Digital and Social Media.
           </motion.p>
           <div className="hidden lg:block">
-            <button className="bg-blue-950 text-white font-semibold py-2 px-8 text-[14px] md:text-[16px] rounded-full h-8 w-28 shadow-2xl flex items-center">
-              Contact
-              <div className="bg-blue-950 h-9 w-9 p-2 rounded-full flex items-center justify-center">
-                <span className="text-2xl md:text-3xl transition-transform duration-300">
-                  <IoArrowForwardCircleOutline />
-                </span>
-              </div>
-            </button>
-          </div>
+          <button className="bg-blue-950 text-white font-semibold py-2 px-4 text-[16px] rounded-full h-8 w-28 font-marko shadow-2xl flex items-center">
+           <Link to="/contact">Contact</Link> 
+            <div className="ml-2 bg-blue-950 h-9 w-9 p-2 rounded-full flex items-center justify-center">
+              <span className='text-3xl transition-transform duration-300 '>
+                <IoArrowForwardCircleOutline />
+              </span>
+            </div>
+          </button>
+        </div>
         </div>
 
         {/* Right Section - Image with Card Background */}

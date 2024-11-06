@@ -55,7 +55,7 @@ const WordPress = () => {
           </h2>
         </div>
 
-        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed max-w-7xl">
+        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px]  leading-relaxed text-justify max-w-7xl">
           <p>
             PCS supports small and medium sized businesses to conceptualize, design, and develop websites that are user-friendly as well as search engine optimized<br/>
             and social media ready using WordPress. PCS offers custom WordPress theme design and development, custom WordPress plug-in development, or ongoing<br/>

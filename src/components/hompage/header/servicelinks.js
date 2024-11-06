@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowRight } from "react-icons/fa6";
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 
 const services = [
     { 
@@ -35,13 +35,20 @@ const services = [
     },
 ];
   
-const ServiceLink = () => {
+const ServiceLink = ({ closeMenu }) => {  // Accept closeMenu as a prop
   const [hovered, setHovered] = useState(null);
 
   return (
     <div className="grid grid-cols-2 gap-6 p-8">
       {services.map((service, index) => (
-        <Link to={service.to} key={index} className="relative" onMouseEnter={() => setHovered(index)} onMouseLeave={() => setHovered(null)}>
+        <Link 
+          to={service.to} 
+          key={index} 
+          className="relative" 
+          onMouseEnter={() => setHovered(index)} 
+          onMouseLeave={() => setHovered(null)}
+          onClick={closeMenu} // Call closeMenu when the link is clicked
+        >
           <div
             className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
               hovered === index ? 'bg-blue-100' : 'bg-white'
@@ -55,7 +62,7 @@ const ServiceLink = () => {
             {/* Render the arrow only when hovered */}
             {hovered === index && (
               <div className="absolute bottom-4 right-4 flex items-center py-2 px-4 rounded-full space-x-1 bg-blue-300">
-                <span className="text-sm "><FaArrowRight /></span>
+                <span className="text-sm"><FaArrowRight /></span>
               </div>
             )}
 

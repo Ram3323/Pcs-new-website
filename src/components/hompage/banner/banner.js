@@ -184,19 +184,19 @@ const Banner = () => {
         {/* Stats Section Positioned Over Image */}
         <div className="absolute z-30 bottom-0 left-1/2 transform -translate-x-1/2 bg-white p-2 md:p-6 sm:p-4 shadow-xl flex flex-row md:flex-row space-x-8 md:space-y-0 md:space-x-12 xl:space-x-24">
           {/* Experience */}
-          <div className="text-center">
-            <div className="text-xl md:text-2xl lg:text-3xl mb-1 font-bold">{experience}+</div>
-            <div className="text-sm md:text-base lg:text-lg">Experience</div>
+          <div className="text-center font-marko">
+            <div className="text-xl md:text-2xl lg:text-2xl mb-1 font-medium">{experience}+</div>
+            <div className="text-sm md:text-base lg:text-lg ">Experience</div>
           </div>
           {/* Projects */}
-          <div className="text-center">
-            <div className="text-xl md:text-2xl lg:text-3xl mb-1 font-bold">{projects}+</div>
-            <div className="text-sm md:text-base lg:text-lg">Projects</div>
+          <div className="text-center font-marko">
+            <div className="text-xl md:text-2xl lg:text-2xl mb-1  font-medium">{projects}+</div>
+            <div className="text-sm md:text-base lg:text-lg ">Projects</div>
           </div>
           {/* Clients */}
-          <div className="text-center">
-            <div className="text-xl md:text-2xl lg:text-3xl mb-1 font-bold">{clients}+</div>
-            <div className="text-sm md:text-base lg:text-lg">Clients</div>
+          <div className="text-center font-marko">
+            <div className="text-xl md:text-2xl lg:text-2xl mb-1  font-medium">{clients}+</div>
+            <div className="text-sm md:text-base lg:text-lg ">Clients</div>
           </div>
         </div>
       </div>

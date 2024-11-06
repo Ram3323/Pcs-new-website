@@ -91,16 +91,16 @@ const AboutFeatures = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row justify-center mb-6 items-start px-4 md:px-0">
+    <div className="flex flex-col md:flex-row justify-center mb-6 items-start px-16 md:px-4 lg:px-12 ">
       {/* Left Section: Colored labels */}
       <div className="flex flex-col mb-8 md:mb-0 md:mr-20 gap-2 mt-8 md:mt-20 font-merienda">
-        <div className="bg-blue-300 p-4 md:p-6 text-lg md:text-2xl text-center font-bold ml-0 md:ml-8 w-full md:w-80 rotate-[-5deg] transition-transform duration-300 hover:rotate-[-2deg] hover:bg-blue-400 hover:scale-105">
+        <div className="bg-blue-300 p-4 md:p-6 text-lg md:text-xl lg:text-2xl text-center font-bold ml-0 md:ml-8 w-full md:w-60 lg:w-80 rotate-[-5deg] transition-transform duration-300 hover:rotate-[-2deg] hover:bg-blue-400 hover:scale-105">
           Our Process
         </div>
-        <div className="bg-blue-100 p-4 md:p-6 text-lg md:text-2xl text-center font-bold w-full md:w-96 rotate-[3deg] transition-transform duration-300 hover:rotate-[0deg] hover:bg-blue-200 hover:scale-105">
+        <div className="bg-blue-100 p-4 md:p-6 text-lg md:text-xl lg:text-2xl text-center font-bold w-full md:w-72 lg:w-96  rotate-[3deg] transition-transform duration-300 hover:rotate-[0deg] hover:bg-blue-200 hover:scale-105">
           Simple, Seamless
         </div>
-        <div className="bg-blue-500 p-4 md:p-6 text-lg md:text-2xl text-center font-bold ml-0 md:ml-8 w-full md:w-80 rotate-[-5deg] transition-transform duration-300 hover:rotate-[-3deg] hover:bg-blue-500 hover:scale-105">
+        <div className="bg-blue-500 p-4 md:p-6 text-lg md:text-xl lg:text-2xl text-center font-bold ml-0 md:ml-8 w-full md:w-60 lg:w-80 rotate-[-5deg] transition-transform duration-300 hover:rotate-[-3deg] hover:bg-blue-500 hover:scale-105">
           Streamlined
         </div>
       </div>
@@ -123,7 +123,7 @@ const StepCard = ({ stepItem, index }) => {
   return (
     <div
       ref={ref}
-      className={`flex flex-col md:flex-row transform transition-opacity duration-700 ${
+      className={`flex flex-col md:flex-row transform transition-opacity md:mr-6  duration-700 ${
         inView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
       } `}
     >

@@ -53,7 +53,7 @@ const WebDesign = () => {
           </h2>
         </div>
 
-        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed max-w-6xl">
+        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed text-justify max-w-6xl">
           <p>
           We bring your digital vision to life with captivating, functional, and user-friendly web designs that leave a lasting impression. Our team of expert designers and developers are dedicated to creating websites that not only look stunning but also provide an intuitive, seamless user experience. From responsive layouts to optimized load speeds, we focus on every detail to ensure your website performs flawlessly across all devices.
 

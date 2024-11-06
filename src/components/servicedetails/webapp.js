@@ -59,7 +59,7 @@ const WebApp = () => {
           </h2>
         </div>
 
-        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed max-w-6xl">
+        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] text-justify leading-relaxed max-w-6xl">
           <p>
             Our web applications are designed to help businesses streamline operations, engage users, and drive growth through powerful, tailored solutions. Built with scalability and flexibility in mind, each web app we create is crafted to meet the unique needs of your business while adapting seamlessly to the digital landscape. From intuitive interfaces to secure, high-performing backends, we prioritize both functionality and user experience to ensure your web app delivers real value.
 

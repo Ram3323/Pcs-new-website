@@ -53,7 +53,7 @@ const SEO = () => {
           </h2>
         </div>
 
-        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] leading-relaxed max-w-6xl">
+        <div className="text-gray-700 text-left font-markazi text-sm md:text-[18px] text-justify leading-relaxed max-w-6xl">
           <p>
           In today's digital landscape, effective SEO is essential for businesses looking to enhance their online presence and attract targeted traffic. Our comprehensive SEO strategies are designed to improve your website's visibility on search engines, ensuring that your brand stands out in a crowded market. We begin with an in-depth analysis of your current online footprint, identifying key opportunities and areas for improvement.
 

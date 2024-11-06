@@ -260,7 +260,7 @@ const Portfolio = () => {
 
   return (
     <div id="portfolio-section" className={`transition-opacity mb-28 2xl:mb-0 duration-500 ${isVisible ? 'opacity-100 animate-slide-up' : 'opacity-0'}`}>
-      <h2 className="text-3xl font-bold text-center mb-4 text-black">Our Portfolio</h2>
+      <h2 className="text-2xl font-medium text-center mb-4 text-black font-marko">Our Portfolio</h2>
       <div className='border-b-2 border-grey-500 w-24 mx-auto mb-16'></div>
 
       <div
@@ -271,7 +271,7 @@ const Portfolio = () => {
         {!isTablet && (
           <button
             onClick={prevSlide}
-            className="absolute left-[-100px] top-1/2 transform -translate-y-1/2 text-lg font-semibold text-gray-500 hover:text-black p-2 z-20 hidden md:block"
+            className="absolute left-[-100px] top-1/2 transform -translate-y-1/2 text-lg font-semibold font-markazi text-gray-500 hover:text-black p-2 z-20 hidden md:block"
           >
             <MdSkipPrevious className='text-4xl' />
             Previous
@@ -285,7 +285,7 @@ const Portfolio = () => {
             alt={projects[currentIndex].title}
             className="w-full h-52 object-cover rounded shadow-lg"
           />
-          <div className="mt-4">
+          <div className="mt-4 font-markazi">
             <h3 className="text-2xl font-bold">{projects[currentIndex].title}</h3>
             <p className="text-gray-600 mt-4">
               Technologies used: {projects[currentIndex].technologies}
@@ -308,7 +308,7 @@ const Portfolio = () => {
         {!isTablet && (
           <button
             onClick={nextSlide}
-            className="absolute right-[-100px] top-1/2 transform -translate-y-1/2 text-lg font-semibold text-gray-500 hover:text-black p-2 z-20 hidden md:block"
+            className="absolute right-[-100px] top-1/2 transform -translate-y-1/2 text-lg font-semibold font-markazi text-gray-500 hover:text-black p-2 z-20 hidden md:block"
           >
             <MdSkipNext className='text-4xl' />
             Next
