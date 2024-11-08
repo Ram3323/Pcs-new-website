@@ -2,6 +2,8 @@ import React from 'react';
 import FotterImage from '../footer/images/logo.png';
 import { FiFacebook, FiInstagram, FiLinkedin } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
+import { FaThreads } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -23,13 +25,30 @@ const Footer = () => {
             <h3 className="font-marko text-[20px]">Links</h3>
             <div className="w-[60px] h-[1px] bg-[#D9D9D9] mt-2"></div>
 
-            <ul className='font-katibeh  text-[#D9D9D9] mt-3'>
+            {/* <ul className='font-katibeh  text-[#D9D9D9] mt-3'>
               {['Home', 'About', 'Services', 'Portfolio', 'Blogs'].map((item) => (
                 <li key={item} className="mb-1">
                   <a href="#" className="hover:text-gray-300">{item}</a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
+            <ul className='font-katibeh text-[#D9D9D9] mt-3'>
+  {[
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/aboutbanner' },
+    // { name: 'Services', path: '/services' },
+    { name: 'Portfolio', path: '/portfoliobanner' },
+    { name: 'Blogs', path: '/blogbanner' },
+    { name: 'Contact', path: '/contact' },
+
+  ].map((item) => (
+    <li key={item.name} className="mb-1">
+      <Link to={item.path} className="hover:text-gray-300">
+        {item.name}
+      </Link>
+    </li>
+  ))}
+</ul>
           </div>
 
           {/* Our Services Column */}
@@ -37,13 +56,29 @@ const Footer = () => {
             <h3 className="font-marko   text-[20px]">Our Services</h3>
             <div className="w-[120px] h-[1px] bg-[#D9D9D9] mt-2"></div>
 
-            <ul className='font-katibeh text-[#D9D9D9] mt-3'>
+            {/* <ul className='font-katibeh text-[#D9D9D9] mt-3'>
               {['Web design', 'Web app', 'Mobile app', 'Wordpress', 'SEO', 'E-Commerce'].map((service) => (
                 <li key={service} className="mb-1">
                   <a href="#" className="hover:text-gray-300">{service}</a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
+            <ul className='font-katibeh text-[#D9D9D9] mt-3'>
+  {[
+    { name: 'Web design', path: '/webdesign' },
+    { name: 'Web app', path: '/webapp' },
+    { name: 'Mobile app', path: '/mobileapp' },
+    { name: 'Wordpress', path: '/wordpress' },
+    { name: 'SEO', path: '/seo' },
+    { name: 'E-Commerce', path: '/ecommerce' },
+  ].map((service) => (
+    <li key={service.name} className="mb-1">
+      <Link to={service.path} className="hover:text-gray-300">
+        {service.name}
+      </Link>
+    </li>
+  ))}
+</ul>
           </div>
 
           {/* Social Media Column */}
@@ -52,21 +87,21 @@ const Footer = () => {
   <div className="w-[180px] h-[1px] bg-[#D9D9D9] mt-2"></div>
 
   <div className="font-katibeh text-[18px] text-[#D9D9D9] mt-3 space-y-2">
-    <a href="#" className="flex items-center hover:text-gray-300">
+    <a href="https://www.instagram.com/pcs_tech/" className="flex items-center hover:text-gray-300">
       <FiInstagram  className="mr-2" />
       Instagram
     </a>
-    <a href="#" className="flex items-center hover:text-gray-300">
+    <a href="https://www.facebook.com/Pcstech2021" className="flex items-center hover:text-gray-300">
       <FiFacebook  className="mr-2" />
       Facebook
     </a>
-    <a href="#" className="flex items-center hover:text-gray-300">
+    <a href="https://x.com/i/flow/login?redirect_after_login=%2FPcstech2021" className="flex items-center hover:text-gray-300">
       <BsTwitterX  className="mr-2" />
       Twitter
     </a>
-    <a href="#" className="flex items-center hover:text-gray-300">
-      <FiInstagram className="mr-2" />
-      LinkedIn
+    <a href="https://www.threads.net/@pcs_tech" className="flex items-center hover:text-gray-300">
+      <FaThreads className="mr-2" />
+      Threads
     </a>
   </div>
 </div>

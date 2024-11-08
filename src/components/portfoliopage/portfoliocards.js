@@ -11,18 +11,36 @@ const CardComponent = ({ title, technologies, description, imageUrl, bgColor, is
   const ref = useRef(null);
   const inView = useInView(ref, { threshold: 0.1, triggerOnce: false });
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("down");
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY;
+      setScrollDirection(scrollY > lastScrollY ? "down" : "up");
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+
+    window.addEventListener("scroll", updateScrollDirection);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection);
+    };
+  }, []);
 
   useEffect(() => {
     let timer;
     if (inView) {
+      const delayTime = scrollDirection === "down" ? 500 : 50;
       timer = setTimeout(() => {
         setIsVisible(true);
-      }, 1500); // Delay display by 2 seconds
+      }, delayTime);
     } else {
-      setIsVisible(false); // Reset visibility when out of view
+      setIsVisible(false);
     }
     return () => clearTimeout(timer);
-  }, [inView]);
+  }, [inView, scrollDirection]);
 
   return (
     <motion.div
@@ -36,8 +54,8 @@ const CardComponent = ({ title, technologies, description, imageUrl, bgColor, is
         {/* Image Section */}
         <motion.div
           className="lg:w-1/2 w-full p-4"
-          whileHover={{ scale: 1.05 }} // Add smooth scaling on hover
-          transition={{ duration: 0.3 }} // Adjust timing for smoothness
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
         >
           <motion.img
             src={imageUrl}
@@ -52,7 +70,7 @@ const CardComponent = ({ title, technologies, description, imageUrl, bgColor, is
         {/* Content Section */}
         <div className="lg:w-1/2 w-full font-katibeh p-4 text-white">
           <motion.h2
-            className="text-[30px] font-katibeh   mb-2"
+            className="text-[30px] font-katibeh mb-2"
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 0.5 }}
@@ -60,30 +78,30 @@ const CardComponent = ({ title, technologies, description, imageUrl, bgColor, is
             Title: {title}
           </motion.h2>
           <motion.p
-            className="mb-2 font-markazi "
+            className="mb-2 font-markazi"
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 0.7 }}
           >
-            <strong >Technology used :</strong> <span className='text-[14px]'>{technologies}</span>
+            <strong>Technology used:</strong> <span className="text-[14px]">{technologies}</span>
           </motion.p>
           <motion.p
-            className="mb-4  font-markazi"
+            className="mb-4 font-markazi"
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 0.9 }}
           >
-            <strong>Description :</strong> <span className='text-[14px]'>{description}</span>
+            <strong>Description:</strong> <span className="text-[14px]">{description}</span>
           </motion.p>
           <motion.button
-  className="px-6 py-2 mt-4 bg-white text-gray-800 hover:bg-blue-900 hover:text-white transition-colors duration-1000 ease-in-out"
-  initial={{ opacity: 0 }}
-  animate={isVisible ? { opacity: 1 } : {}}
-  transition={{ duration: 1.2, delay: 1 }}
-  onClick={() => window.open(url, '_blank')} // Open URL in a new tab
->
-  View Live Site
-</motion.button>
+            className="px-6 py-2 mt-4 bg-white text-gray-800 hover:bg-blue-900 hover:text-white transition-colors duration-1000 ease-in-out"
+            initial={{ opacity: 0 }}
+            animate={isVisible ? { opacity: 1 } : {}}
+            transition={{ duration: 1.2, delay: 1 }}
+            onClick={() => window.open(url, '_blank')}
+          >
+            View Live Site
+          </motion.button>
         </div>
       </div>
     </motion.div>
@@ -113,8 +131,8 @@ const PortfolioCards = () => {
     },
     {
       title: 'Lecat',
-      technologies: 'HTML,CSS,Bootstrap,React js,Firebase.',
-      description: 'Lecat VMobile streamlines quiz creation and student result management. It calculates class averages,providing insightful performance data. Simplifies administrative tasks for efficient academic monitoring',
+      technologies: 'HTML, CSS, Bootstrap, React js, Firebase.',
+      description: 'Lecat VMobile streamlines quiz creation and student result management. It calculates class averages, providing insightful performance data.',
       imageUrl: Lecat,
       bgColor: 'bg-blue-600',
       isImageLeft: true,
@@ -122,8 +140,8 @@ const PortfolioCards = () => {
     },
     {
       title: 'Collah',
-      technologies: ' HTML, CSS, JavaScript, JQuery, ASP.NET, Bootstrap, ReactJS, NodeJS.',
-      description: 'This project is an e-commerce web application .In this Application, the user can book the services like AC and home cleaning services and they can sell their old product .The technology stack for this project are ReactJS and ASP.Net.',
+      technologies: 'HTML, CSS, JavaScript, JQuery, ASP.NET, Bootstrap, ReactJS, NodeJS.',
+      description: 'An e-commerce web application for booking services like AC and home cleaning.',
       imageUrl: Coollah,
       bgColor: 'bg-rose-500',
       isImageLeft: false,
@@ -131,8 +149,8 @@ const PortfolioCards = () => {
     },
     {
       title: 'BJMM',
-      technologies: ' ReactNative,PHP.',
-      description: 'This project is an user maintanance mobile application .In this Application, once the user can apply the unathorized verification by get the app code and that user will authorized while using the app.The technology stack for this project are ReactNative and PHP.',
+      technologies: 'ReactNative, PHP.',
+      description: 'A user maintenance mobile application with authorization features.',
       imageUrl: BJMM,
       bgColor: 'bg-orange-500',
       isImageLeft: true,
@@ -141,7 +159,7 @@ const PortfolioCards = () => {
     {
       title: 'Office Chat',
       technologies: 'ReactJs, NodeJs, MySQL.',
-      description: 'Office chat platforms can be as simple as text-based messaging or more complex, offering features like video calls, screen sharing, and integration with project management tools.',
+      description: 'Office chat platform with features for messaging, video calls, and project integration.',
       imageUrl: OfficeChat,
       bgColor: 'bg-green-500',
       isImageLeft: false,

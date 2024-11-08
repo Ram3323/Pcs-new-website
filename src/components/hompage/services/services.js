@@ -183,7 +183,7 @@ const Services = () => {
                     <div className={`${service.bgColor2} rounded-full p-4 shadow-2xl w-16 h-16 -mt-12 mx-auto`}>
                       <img src={service.iconSrc} alt={`${service.title} Icon`} className="w-8 h-8 mx-auto" />
                     </div>
-                    <p className="text-center font-katibeh text-[13px] 2xl:text-[20px] mt-2 text-[#9A9696]">
+                    <p className="text-center font-katibeh text-[13px] 2xl:text-[20px] mt-2 text-black">
                       {service.description}
                     </p>
                   </div>
