@@ -6,7 +6,7 @@ import Lecat from '../portfoliopage/images/lecat.png';
 import Coollah from '../portfoliopage/images/coollah.png';
 import BJMM from '../portfoliopage/images/bjmm.png';
 import OfficeChat from '../portfoliopage/images/officechat.png';
-
+import msloan from "../portfoliopage/images/msloan.png";
 const CardComponent = ({ title, technologies, description, imageUrl, bgColor, isImageLeft, url }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { threshold: 0.1, triggerOnce: false });
@@ -163,8 +163,19 @@ const PortfolioCards = () => {
       imageUrl: OfficeChat,
       bgColor: 'bg-green-500',
       isImageLeft: false,
+      url: 'https://kind-plant-0a6d72700.5.azurestaticapps.net/',
+    },
+    {
+      title: 'MS LoanGuru',
+      technologies: 'React Native, Expo, Php.',
+      description: 'MS LoanGuru is a loan management app designed to help users track loans, calculate interest rates, apply for new loans, and manage repayments effectively.',
+      imageUrl: msloan,
+      bgColor: 'bg-gray-500',
+      isImageLeft: true,
       url: '#',
     },
+    
+    
   ];
 
   return (

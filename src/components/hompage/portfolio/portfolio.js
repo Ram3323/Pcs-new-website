@@ -168,6 +168,7 @@ import lecat from "../portfolio/images/lecat.png";
 import backgroundImage from '../portfolio/images/bg.jpg';
 import coollah from "../portfolio/images/coollah.jpg";
 import bjmm from "../portfolio/images/bjp.jpeg";
+import wts from "../portfolio/images/wts.png";
 import { MdSkipPrevious, MdSkipNext } from "react-icons/md";
 
 const Portfolio = () => {
@@ -201,6 +202,12 @@ const Portfolio = () => {
       image: bjmm,
       technologies: 'ReactNative,PHP.',
       link: '#',
+    },
+    {
+      title: 'Title : World Tamil Siragam',
+      image: wts,
+      technologies: 'ReactJs,NodeJs,TailwindCss',
+      link: 'https://worldtamilsiragam.com/',
     },
   ];
 
